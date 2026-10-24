@@ -1,10 +1,11 @@
 <?php
 
-declare(strict_types=1);
-
-use App\Http\Controllers\EstudianteController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Cliente;
 
-Route::redirect('/', '/estudiantes');
-Route::resource('estudiantes', EstudianteController::class)
-    ->parameters(['estudiantes' => 'estudiante']);
+Route::get('/', function () {
+    // Consulta al cliente id_cliente = 1 en la BD externa
+    $cliente = Cliente::find(1);
+
+    return view('welcome', compact('cliente'));
+});
