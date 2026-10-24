@@ -16,6 +16,7 @@
     <nav aria-label="Navegación principal">
         <a class="nav-link {{ request()->routeIs('estudiantes.index', 'estudiantes.show', 'estudiantes.edit') ? 'selected' : '' }}" href="{{ route('estudiantes.index') }}"><span aria-hidden="true">▦</span> Estudiantes</a>
         <a class="nav-link {{ request()->routeIs('estudiantes.create') ? 'selected' : '' }}" href="{{ route('estudiantes.create') }}"><span aria-hidden="true">＋</span> Registrar estudiante</a>
+        <a class="nav-link {{ request()->routeIs('docentes.*') ? 'selected' : '' }}" href="{{ route('docentes.index') }}"><span aria-hidden="true">◎</span> Docentes (red local)</a>
     </nav>
     <div class="sidebar-bottom"><span class="status-dot"></span> Gestión académica<p>Programación III · Hito 3</p></div>
 </aside>

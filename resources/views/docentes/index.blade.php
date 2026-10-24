@@ -8,11 +8,20 @@
 <body class="container mt-5">
     <h2>Módulo Académico - Servidor Docente (Red Local)</h2>
 
-    @if(isset($errorRed) && $errorRed)
+    @php($errorRed = $errorRed ?? session('errorRed'))
+    @if($errorRed)
         <div class="alert alert-danger" role="alert">
             {{ $errorRed }}
         </div>
     @endif
+
+    @if($errors->any())
+        <div class="alert alert-warning" role="alert">
+            <ul class="mb-0">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul>
+        </div>
+    @endif
+
+    <p><a href="{{ route('estudiantes.index') }}">&larr; Volver a Estudiantes</a></p>
 
     @if(session('success'))
         <div class="alert alert-success">
