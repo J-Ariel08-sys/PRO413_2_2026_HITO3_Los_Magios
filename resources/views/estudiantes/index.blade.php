@@ -11,7 +11,7 @@
     <div class="card-heading"><h2>Directorio de estudiantes</h2><span class="count">{{ $estudiantes->total() }} resultados</span></div>
     <form method="GET" action="{{ route('estudiantes.index') }}" class="filters" role="search">
         <div class="search-field"><label for="q">Buscar estudiante</label><input id="q" type="search" name="q" value="{{ $busqueda }}" maxlength="100" placeholder="Nombre, apellido, código o correo"></div>
-        <div><label for="estado">Estado</label><select name="estado" id="estado"><option value="">Todos los estados</option value="activo" @selected($estado === 'activo')>Activo</option><option value="inactivo" @selected($estado === 'inactivo')>Inactivo</option></select></div>
+        <div><label for="estado">Estado</label><select name="estado" id="estado"><option value="">Todos los estados</option><option value="activo" @selected($estado === 'activo')>Activo</option><option value="inactivo" @selected($estado === 'inactivo')>Inactivo</option></select></div>
         <button class="button secondary" type="submit">Buscar</button>
         @if($busqueda !== '' || $estado !== '')<a class="text-link clear" href="{{ route('estudiantes.index') }}">Limpiar</a>@endif
     </form>
